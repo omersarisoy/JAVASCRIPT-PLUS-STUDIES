@@ -1,47 +1,46 @@
 // console.log(this);
-/*
-function Person(firstName, birthDay){
+
+/* function Person(firstName, birthDay){
 this.firstName = firstName;
 this.birthDay = birthDay;
 };
 
 const omer = new Person("ömer", 1993);
 console.log(`omer:>>`, omer);
-console.log(`omer:>>`, omer.birthDay);
+console.log(`omer:>>`, omer.birthDay); */
 
 
 ///////////////////////////////////////////
 
-const omero = new Person("ömer", 1993);
+/* const omero = new Person("ömer", 1993);
 const aaa = new Person("ömer", 1993);
 
 console.log(omero == aaa);
 console.log(omero === aaa);
-console.log(omero.firstName === aaa.firstName)
-*/
+console.log(omero.firstName === aaa.firstName) */
+
 
 /////////////////////////////////////////////
 
-/*
-const arr = [];
+
+/* const arr = [];
 const arr1 = ["a"];
 const arr2 = ["x", "y", "z"]
 
 console.log(`arr:>>`, arr)
 arr.push("omer")  
-console.log(`arr:>>`, arr)  // we cant assign const variable another value. But we can change variable's content. They have one variable in stack and same value in heap. We push it this one value. There is only one arrow. one stack >>>> one arrow >>> one heap
+console.log(`arr:>>`, arr)  // we cant assign else value to const variable . But we can change variable's content. They have one variable in stack and same value in heap. We push it this one value. There is only one arrow. one stack >>>> one arrow >>> one heap
 
-arr = arr2  // We cant change const variable with another one. two sack >>> two arrow >>> one heap
-*/
+// arr = arr2  // We cant change const variable with another one. two stack >>> two arrow >>> one heap */
 
 /////////////////////////////////////////////////////
-/*
-let arr = [];
+
+/* let arr = [];
 let arr2 = ["x", "y", "z"];
 
 arr = arr2;
 console.log(`arr:>>`, arr);
-console.log(`arr2:>>`, arr2); // We can do it with let keyword.
+console.log(`arr2:>>`, arr2); // But we can do it with let keyword.
 
 
 
@@ -63,13 +62,13 @@ var he = me ;
 me.name = "hakan"
 console.log(`myName:>>>`, me);
 console.log(`hisName:>>>`, he)
-console.log(`yourName:>>>`, you);
+console.log(`yourName:>>>`, you); */
 
-*/
+
 ////////////////////////////////////////////////////////////
 
-/*
-function Person(firstName, birthDay){   // constructor function
+
+ /* function Person(firstName, birthDay){   // constructor function
     this.firstName = firstName;
     this.birthDay = birthDay;
 
@@ -78,7 +77,7 @@ function Person(firstName, birthDay){   // constructor function
     }
 }
 
-const omer = new Person("omer", 1993)  // To create object from constroctor function (Person) we use new keyword 
+const omer = new Person("omer", 1993)  // To create object from constructor function (Person) we use new keyword 
 const soner = new Person("soner", 1995)
 
 console.log(omer.calcAge())  // Inheritance
@@ -86,12 +85,12 @@ console.log(omer.calcAge())  // Inheritance
 console.log(soner.firstName + " " + soner.calcAge())
 
 const davut = new Person("davut", 2001).calcAge();
-console.log(davut)
-*/
+console.log(davut) 
+
 
 //////////////////////////////////////////////////////////////////
 
-/*
+
 Person.prototype.calcAge = function() {
     return new Date().getFullYear() - this.birthDay
 
@@ -114,13 +113,13 @@ arr = [1,2,3];
 console.log(arr.__proto__)  // array nesnesinin atadan kalma fonksiyonlarını gösteririr. Biz bunları istediğimiz yerde kullanabiliriz.
 
 arr.push(4,5)
-console.log(arr)
-*/
+console.log(arr) */
+
 
 ////////////////////////////////////////////////////////
 
-/*
-class Dog {
+
+/* class Dog {
     constructor(name) {
         this.name = name;
     }
@@ -142,12 +141,12 @@ Dog.prototype.smallbark = function() {
 
 karabas.smallbark()
 // Javascript prototype tabanlı bir programalama dilidir. Yani oluşturduğumuz class a daha sonradan ekleme yapabiliyoruz. Class tabanlı olsaydı sonradan ekleme yapamazdık. Yapacağımız değişikliği veya eklemeyi doğrudan class ın içinde yapmamız gerekecekti.
-*/
+ */
 
 /////////////////////////////////////////////////////////////////
 
-/*
-class Person {
+
+/* class Person {
     constructor(firstName, lastName, birthYear){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -176,7 +175,7 @@ console.log(hakan)
 hakan.selamla()
 
 console.log(hakan.employment)
-
+ 
 
 
 class Teacher extends Person{
@@ -185,7 +184,7 @@ class Teacher extends Person{
 */
 ////////////////////////////////////////////////////////////
 
-/*
+/* 
 class Person {
     constructor(firstName, lastName, birthYear, employment = ""){
         this.firstName = firstName;
@@ -213,7 +212,7 @@ class Student extends Person {
     }
 
     selamla(){
-        console.log("Hi I am a student")  // polymorphism >>> overwritw yapabiliyoruz
+        console.log("Hi I am a student")  // polymorphism >>> overwrite yapabiliyoruz
     }
 }
 
@@ -241,10 +240,10 @@ class Teacher extends Person{
 //JS de  her şey bir yerden miras alır. Object hariç her şeyin mirası var. En son objectten miras alınır. Objectin en son prototype ı null. O yüzden object miras alamaz.
 
 
-*/
+ */
 /////////////////////////////////////////////////////////////
 
-const person = {
+/* const person = {
     firstName: "Matthew",
     lastName: "Dunn",
     birthYear: 1980,
@@ -264,28 +263,28 @@ const person = {
       return this.age;
     },
   };
-  /*
+  
   console.log(person.calcAgeBad(1977));  
   console.log(person.age);  // main class'da age olmadığı için undefined
   console.log(person.calcAge());  // sınıfın içinde age tanımlayıp main class'a döndürdük
-  console.log(person.age); // calcAge'de tanımladığığımız age'i döndürdü.
-  */
+  console.log(person.age); // calcAge'de tanımladığığımız age'i döndürdü. */
+ 
 
  /////////////////////////////////////////////////
   
- /*
-  const calcAge = function (birthYear) {
+ 
+ /*  const calcAge = function (birthYear) {
     console.log("Regular Function in Global Scope");
     console.log(this);  // global scope'da >>> window. bulunduğumuz container window nesnesi olduğu için window geldi. 
     console.log(2021 - birthYear);
   };
   
-  calcAge(1981);
-  */
+  calcAge(1981); */
+ 
 
   //////////////////////////////////////////////////////
   
-  /*
+  /* 
   const calcAgeArrow = (birthYear) => {
     console.log("Arrow Function in Global Scope");
     console.log(this); // glabal scope'da >>> window.
@@ -297,8 +296,8 @@ const person = {
 
   ///////////////////////////////////////////////////////
   
-  /*
-  const teacher = {
+  
+  /* const teacher = {
     firstName: "Matthew",
     lastName: "Dunn",
     birthYear: 1980,
@@ -340,7 +339,7 @@ const person = {
   teacher.calcAge();
   teacher.calcAgeArrow();
 //   teacher.calcAgeDelayed();
-  teacher.calcAgeDelayedArrow();
-*/
+  teacher.calcAgeDelayedArrow(); */
+
 
 // arrow function object kullanımında saçmalayabiliyor. O yüzden nesne boyutunda kullanmamakta fayda var.
