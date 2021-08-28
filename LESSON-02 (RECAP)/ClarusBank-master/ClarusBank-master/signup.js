@@ -1,39 +1,41 @@
-// const registrationForm = document.getElementById("registration_form")
+const registrationForm = document.getElementById("registration_form")
 
 // //////////////////// ALERT ////////////////////////
-// //  registrationForm.addEventListener("submit", function(element)
-// //  {element.preventDefault();
-// //  alert(document.getElementsByName("first_name")[0].value + " " + document.getElementsByName("last_name")[0].value) })
+/*  registrationForm.addEventListener("submit", function(element)
+ {element.preventDefault();
+ alert(document.getElementsByName("first_name")[0].value + " " + document.getElementsByName("last_name")[0].value) }) */
 
-// registrationForm.addEventListener("submit", function(element){
-//    element.preventDefault();
-//    window.location.href = "checkout.html?firstname=" + document.getElementsByName("first_name")[0].value + "&lastname=" + document.getElementsByName("last_name")[0].value
-// })
+/* registrationForm.addEventListener("submit", function(element){
+   element.preventDefault();
+   window.location.href = "checkout.html?firstname=" + document.getElementsByName("first_name")[0].value + "&lastname=" + document.getElementsByName("last_name")[0].value
+}) */
 
-// const lastNameInput = document.getElementsByName("last_name")[0]
-// const remainCharSpan = document.getElementById("charCount")
+/*
+const lastNameInput = document.getElementsByName("last_name")[0]
+const remainCharSpan = document.getElementById("charCount")
 
-// const showRemainChar = () => {
-//    if(lastNameInput.value.length > 0){
-//    remainCharSpan.style.visibility = "visible"
-//    remainCharSpan.innerHTML = lastNameInput.value.length + "/40"
-//    }
+ const showRemainChar = () => {
+   if(lastNameInput.value.length > 0){
+   remainCharSpan.style.visibility = "visible"
+   remainCharSpan.innerHTML = lastNameInput.value.length + "/40"
+   }
 
-//    else {
-//       //  remainCharSpan.style.visibility = "hidden" 
-//        remainCharSpan.style.display = "none" // bir kere yazıp sildikten sonra hiç gözükmüyor.
-//    }
-// }
+   else {
+       remainCharSpan.style.visibility = "hidden" 
+      //  remainCharSpan.style.display = "none" // bir kere yazıp sildikten sonra hiç gözükmüyor.
+   }
+}
 
-// lastNameInput.addEventListener("keyup", showRemainChar)
-
+lastNameInput.addEventListener("keyup", showRemainChar)
+ */
 // ////////////////////// BIRTHDAY //////////////////////////////////
 
-// const birthday = document.getElementsByName("birthday")[0]
+/* const birthday = document.getElementsByName("birthday")[0]
 
-// birthday.addEventListener("change", function(){
-//    alert(new Date(this.value).toLocaleDateString() + " date is selected")
-// })
+birthday.addEventListener("change", function(){
+   alert(new Date(this.value).toLocaleDateString() + " date is selected")
+})
+console.log(Date(this.value)); */
 
 /////////////////////// EMAIL //////////////////////////////////////
 
