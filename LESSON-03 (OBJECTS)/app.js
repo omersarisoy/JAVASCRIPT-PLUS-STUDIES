@@ -12,8 +12,9 @@ var dog = {
     }
     };
   
-  dog.bark();
-  console.log(dog.result());
+    dog.bark();
+    console.log(dog.result());
+  
 
   let myName = new String('Matthew');
 
@@ -41,7 +42,7 @@ const student = {
 student.dob = 2014;
 student['Baba Adi'] = 'Daniel'
 
-delete student.ad;
+// delete student.ad;
 
 console.log('student :>> ', student);
 console.log('okul adı :>> ', student['Okul Adı']);
