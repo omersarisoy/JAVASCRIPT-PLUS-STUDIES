@@ -15,8 +15,8 @@ function result(ömer,callback) {
 
  result(ömer,console.log)
 
-console.log(result(ömer,alert))
- */
+console.log(result(ömer,alert)) */
+
 ////////////////////////////////////////////////////////////////////////////
 
 // Challange 1
@@ -28,7 +28,7 @@ console.log(result(ömer,alert))
 //  arrWithdraws =
 
 
-// const movements = [100, 300, -200, 500, -400, 225, 1000, -700];
+const movements = [100, 300, -200, 500, -400, 225, 1000, -700];
 
 // Filter Method
 
@@ -42,23 +42,23 @@ let withdrew =  movements.filter((minus) => (
 ))
 console.log(`withdrew`, withdrew)
 
-
+// Reduce Method
 
 let arrDeposits = deposited.reduce((total, num) => (
     total + num
 ))
-console.log(arrDeposits)
+console.log(`arrDeposits:`,arrDeposits)
 
 
 let arrWithdraws = withdrew.reduce((total,num) => {
     return total + num
 })
-console.log(`arrWithdraws`, arrWithdraws)
- */
+console.log(`arrWithdraws`, Math.abs(arrWithdraws) ) */
 
 
-/* // ForEach Method
 
+// ForEach Method
+/* 
 movements.forEach((element ) => element > 0  ? 
     console.log(`Para Yatırma : ${element} TL`) :
     console.log(`Para Çekme :  ${Math.abs(element)} TL`) ) 
@@ -78,7 +78,7 @@ movements.forEach(element => element > 0 ?
 
 // Challange 2
 // map initials
-// const str = 'Clarusway Online Career IT Training School';
+const str = 'Clarusway Online Career IT Training School';
 
 
 /* 
@@ -91,8 +91,9 @@ let L6 = str.charAt(36)
 
 
 var initial = L1.concat(L2,L3,L4,L5,L6)
-console.log(`initial >>>>>`, initial) 
+console.log(`initial >>>>>`, initial)  
 */
+
  
 
 // Map Function
@@ -107,10 +108,10 @@ console.log(`initial >>>>>`, initial)
 
 var user = prompt("Enter your words")
 
-console.log(user.split("").map(i => i==i.toLocaleUpperCase() ? i.toLocaleLowerCase() : i.toLocaleUpperCase() ).join(""))
+console.log(user.split("").map(i => i==i.toLocaleUpperCase() ? i.toLocaleLowerCase() : i.toLocaleUpperCase()).join(""))
  */
 
-
+/* 
 
 const cart = [
     {
@@ -151,17 +152,21 @@ const cart = [
     sum += element.price;
   }
   console.log(sum);
+  
   // 2
   sum = 0;
   for (const el of cart) {
     sum += el.price;
   }
   console.log(sum);
+
+
   // 3
   sum = 0;
   cart.forEach((element) => {
     sum += element.price;
   });
+
   // 4
   const result = cart.map((item) => item.price).reduce((acc, curr) => acc + curr);
   console.log("result :>> ", result);
@@ -174,33 +179,37 @@ const cart = [
   
   const vat = cart.reduce((sum, curItem) => {
     return sum + (curItem.price * curItem.vat) / 100;
-  }, {});
-  console.log("vat :>> ", vat);
+  },0);
+  console.log("vat :>> ", vat); */
 
-  /*
+
+/* 
 --------------
 for in example
 --------------
-*/
-const parent = {
-    firstName: "Mike",
-    lastName: "Doe",
-    profession: "Barber",
-  };
+ */
+
+
+// const parent = {
+//     firstName: "Mike",
+//     lastName: "Doe",
+//     profession: "Barber",
+//   };
   
-  function Baby() {
-    this.firstName = "unnamed";
-    this.weight = 3.4;
-  }
+//   function Baby() {
+//     this.firstName = "unnamed";
+//     this.weight = 3.4;
+//   }
   
-  Baby.prototype = parent;
+//   Baby.prototype = parent;
   
-  var sally = new Baby();
-  sally.firstName = "Sally";
+//   var sally = new Baby();
+//   sally.firstName = "Sally";
   
-  for (const prop in sally) {
-    const element = sally[prop];
-    console.log(prop, ":>>", element);
-    if (Object.hasOwnProperty.call(sally, prop)) {
-    }
-  }
+//   for (const prop in sally) {
+//     const element = sally[prop];
+//     // console.log(prop, ":>>", element);
+//     if (Object.hasOwnProperty.call(sally, prop)) {
+//       console.log(prop, ":>>", element);
+//     }
+//   }
