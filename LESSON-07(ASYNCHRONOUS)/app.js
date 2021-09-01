@@ -49,7 +49,9 @@
 // console.log("Hello1")
 
 // setTimeout(() => {
-//     slowTask()      // fonksiyon gerçekleşene kadar işlem yapamıyorum.
+//     slowTask()      // fonksiyon gerçekleşene kadar sayfa üzerinde işlem yapamıyoruz.
+
+//     console.log("setTimeout")
 // }, 0);
 
 // console.log("Hello2")
@@ -88,50 +90,50 @@
 
 ///////////////////////////////////////////////////////////
 
-// function showTime(){
+// setInterval(showTime, 1000);
 
-//     const timeLabel = document.querySelector("p")
-        
-//     timeLabel.innerHTML = new Date().toLocaleTimeString()
+// function showTime(){
+  
+//   const timeLabel = document.querySelector("p")
+  
+//   timeLabel.innerHTML = new Date().toLocaleTimeString()
 // }
 
-
-// setInterval(showTime, 1000);
 
 ///////////////////////////////////////////////////////////
 
-// let counter = 0;
+let counter = 0;
 
-// function showTime(){
+function showTime(){
     
-//     const timeLabel = document.querySelector("p")       
-//     timeLabel.innerHTML = new Date().toLocaleTimeString()
+    const timeLabel = document.querySelector("p")       
+    timeLabel.innerHTML = new Date().toLocaleTimeString()
     
-//     if (counter == 10){
-//         clearInterval(stop)
-//         timeLabel.innerHTML = "merhaba"
-//     }
-//     counter++;
-// }
+    if (counter == 10){
+        clearInterval(stop)
+        timeLabel.innerHTML = "merhaba"
+    }
+    counter++;
+}
 
-// const stop = setInterval(showTime, 1000);
+const stop = setInterval(showTime, 1000);
 
 /** promise */
 
-const myPromise = new Promise((resolve, reject) => {
-    console.log("myPromise started");
-    let condition = true;
-    if (condition) {
-      resolve("işlem tamam");
-    }
-    reject(Error("gerçekleşmedi"));
-  });
-  console.log("merhaba");
-  myPromise
-    .then((msg) => {
-      console.log(msg);
-    })
-    .catch((msg) => {
-      console.log(msg);
-    });
-  console.log("gule gule");
+// const myPromise = new Promise((resolve, reject) => {
+//     console.log("myPromise started");
+//     let condition = true;
+//     if (condition) {
+//       resolve("işlem tamam");
+//     }
+//     reject(Error("gerçekleşmedi"));
+//   });
+//   console.log("merhaba");
+//   myPromise
+//     .then((msg) => {
+//       console.log(msg);
+//     })
+//     .catch((msg) => {
+//       console.log(msg);
+//     });
+//   console.log("gule gule");
