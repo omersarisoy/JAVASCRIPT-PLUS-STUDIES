@@ -9,14 +9,20 @@
 
 ////////////////////////////////////////////////////////////
 
+// console.time("ömer")
+
 // console.log("Hello1")
+// console.timeLog("ömer")
 
 // setTimeout(() => {
 //     console.log("setTimeout")
-// }, 0);
+//     console.timeLog("ömer")
+// }, 1000);
 
 // console.log("Hello2")
+// console.timeLog("ömer")
 // console.log("Hello3")
+// console.timeLog("ömer")
 
 ////////////////////////////////////////////////////////////
 
@@ -102,38 +108,74 @@
 
 ///////////////////////////////////////////////////////////
 
-let counter = 0;
+// let counter = 0;
 
-function showTime(){
+// function showTime(){
     
-    const timeLabel = document.querySelector("p")       
-    timeLabel.innerHTML = new Date().toLocaleTimeString()
+//     const timeLabel = document.querySelector("p")       
+//     timeLabel.innerHTML = new Date().toLocaleTimeString()
     
-    if (counter == 10){
-        clearInterval(stop)
-        timeLabel.innerHTML = "merhaba"
-    }
-    counter++;
-}
+//     if (counter == 10){
+//         clearInterval(stop)
+//         timeLabel.innerHTML = "merhaba"
+//     }
+//     counter++;
+// }
 
-const stop = setInterval(showTime, 1000);
+// const stop = setInterval(showTime, 1000);
 
 /** promise */
 
-// const myPromise = new Promise((resolve, reject) => {
-//     console.log("myPromise started");
-//     let condition = true;
-//     if (condition) {
-//       resolve("işlem tamam");
-//     }
-//     reject(Error("gerçekleşmedi"));
-//   });
-//   console.log("merhaba");
-//   myPromise
-//     .then((msg) => {
-//       console.log(msg);
-//     })
-//     .catch((msg) => {
-//       console.log(msg);
-//     });
-//   console.log("gule gule");
+/* const myPromise = new Promise((resolve, reject) => {
+    console.log("myPromise started");
+    let condition = true;
+    if (condition) {
+      resolve("işlem tamam");
+    }
+    reject(Error("gerçekleşmedi"));
+  });
+  console.log("merhaba");
+  myPromise
+    .then((msg) => {
+      console.log(msg);
+    })
+    .catch((msg) => {
+      console.log(msg);
+    });
+  console.log("gule gule");
+ */
+
+/* var ömer = new Promise(function(resolve, reject) {
+    if(true){
+        resolve("SUCCESS");
+    }
+    else{
+        reject("FAIL");
+    }
+});
+
+ömer.then(data => {
+    console.log(data)
+})
+
+ömer.catch(error => {
+    console.log(error)
+})
+ */
+
+
+new Promise((resolve,reject) =>{
+    setTimeout(() => {
+        resolve(5)
+    }, 1000);
+
+}).then(function(number){
+    console.log(number)
+    return number*number
+}).then(number => {
+    console.log(number)
+    return number+number
+}).then(function(number){
+    console.log(number)
+})
+
