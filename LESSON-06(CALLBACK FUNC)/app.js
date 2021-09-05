@@ -29,10 +29,10 @@ console.log(result(ömer,alert)) */
 
 
 const movements = [100, 300, -200, 500, -400, 225, 1000, -700];
-
+/* 
 // Filter Method
 
-/* let deposited =  movements.filter((plus) => (
+let deposited =  movements.filter((plus) => (
     plus > 0
 ))
 console.log(`deposited`, deposited)
@@ -70,18 +70,15 @@ let arrWithdraws = 0;
 movements.forEach(element => element > 0 ? 
     arrDeposits += element : arrWithdraws += element )
     console.log(`Yatırılan Toplam Para: ${arrDeposits} TL ` )
-    console.log(`Çekilen Toplam Para: ${arrWithdraws*-1} TL ` )
-
- */
+    console.log(`Çekilen Toplam Para: ${arrWithdraws*-1} TL ` ) */
 
 
 
 // Challange 2
 // map initials
-const str = 'Clarusway Online Career IT Training School';
+ const str = 'Clarusway Online Career IT Training School';
 
-
-/* 
+/*
 let L1 = str.charAt(0)
 let L2 = str.charAt(10)
 let L3 = str.charAt(17)
@@ -91,8 +88,8 @@ let L6 = str.charAt(36)
 
 
 var initial = L1.concat(L2,L3,L4,L5,L6)
-console.log(`initial >>>>>`, initial)  
-*/
+console.log(`initial >>>>>`, initial)  */ 
+
 
  
 
@@ -102,17 +99,16 @@ console.log(`initial >>>>>`, initial)
 
 
 
-/* 
+
 // const str = 'The Quick Brown Fox'; // tHe YeLLoW fOx 
 // Writ a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'
 
-var user = prompt("Enter your words")
+// var user = prompt("Enter your words")
+// console.log(user.split("").map(i => i==i.toLocaleUpperCase() ? i.toLocaleLowerCase() : i.toLocaleUpperCase()).join(""))
 
-console.log(user.split("").map(i => i==i.toLocaleUpperCase() ? i.toLocaleLowerCase() : i.toLocaleUpperCase()).join(""))
- */
+
 
 /* 
-
 const cart = [
     {
       item: "🍫",
@@ -180,7 +176,8 @@ const cart = [
   const vat = cart.reduce((sum, curItem) => {
     return sum + (curItem.price * curItem.vat) / 100;
   },0);
-  console.log("vat :>> ", vat); */
+  console.log("vat :>> ", vat); 
+   */
 
 
 /* 
@@ -190,26 +187,28 @@ for in example
  */
 
 
-// const parent = {
-//     firstName: "Mike",
-//     lastName: "Doe",
-//     profession: "Barber",
-//   };
+const parent = {
+    firstName: "Mike",
+    lastName: "Doe",
+    profession: "Barber",
+  };
   
-//   function Baby() {
-//     this.firstName = "unnamed";
-//     this.weight = 3.4;
-//   }
+  function Baby() {
+    this.firstName = "unnamed";
+    this.weight = 3.4;
+  }
   
-//   Baby.prototype = parent;
+  Baby.prototype = parent;
   
-//   var sally = new Baby();
-//   sally.firstName = "Sally";
+  var sally = new Baby();
+  sally.firstName = "Sally";
+  // sally.weight = 5.5;
+  // sally.height ="45cm"
   
-//   for (const prop in sally) {
-//     const element = sally[prop];
-//     // console.log(prop, ":>>", element);
-//     if (Object.hasOwnProperty.call(sally, prop)) {
-//       console.log(prop, ":>>", element);
-//     }
-//   }
+  for (const prop in sally) {
+    const element = sally[prop];
+    // console.log(prop, ":>>", element);
+    if (Object.hasOwnProperty.call(sally, prop)) {
+      console.log(prop, ":>>", element);
+    }
+  }
