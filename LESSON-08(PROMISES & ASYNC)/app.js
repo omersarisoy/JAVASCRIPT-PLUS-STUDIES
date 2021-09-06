@@ -58,22 +58,7 @@
 
 // countSeconds(10)
 
-
-// var deger = 0;
-// var saniye = 11;
-// function saniyeDurdur() {
-//     window.clearInterval(deger);
-// }
-// function saniyeBaslat() {
-//     saniye--;
-//     if (saniye >= 0) {
-//         document.getElementById('saniye').innerHTML = saniye;
-//     } else {
-//         window.clearInterval(deger);
-//         document.getElementById('uyari').innerHTML = "Süreniz bitti!";
-//     }
-// }
-// var deger = window.setInterval('saniyeBaslat()', 1000);
+///////////////////////////////////////////////////////////////////////////////////
 
 
 // // setTimeout
@@ -94,7 +79,7 @@
 
 
 // new Promise(function(resolve, reject){
-//     const isSuccessfull = true;
+//     const isSuccessfull = false;
 
 //     if(isSuccessfull){
 //         resolve("task completed successfully");
@@ -107,29 +92,36 @@
 //     return "devam ediyor"
 // })
 
-// .then(console.log)
-// .catch((err) => console.log(err))
+// .then(console.log)  // chaining ==>>> callback function gibi düşünebiliriz. then in içine fanksiyon tanımlayıp da yazabilirdik.
+
+// .catch((err) => {
+//     console.log(err)
+//     return "Game is over!"
+//   }).then(console.log)
+
+
+// AJAX = Asynchronous Javascript and XML
+
+// REST = Representational state transfer
+// Frontend ile backend arasındaki veri akışını sağlar.
 
 
 
+// Application Programing Interface (API)
 
-
-
-// Application Programing Interface
-
-let headersList = {
-    "Accept": "*/*",
-    "User-Agent": "Thunder Client (https://www.thunderclient.io)"
-   }
+// let headersList = {
+//     "Accept": "*/*",
+//     "User-Agent": "Thunder Client (https://www.thunderclient.io)"
+//    }
    
-   fetch("https://restcountries.eu/rest/v2/name/germany", { 
-    //  method: "GET",
-    //  headers: headersList
-   }).then(function(response) {
-     return response.json();
-   }).then(function(data) {
-     console.log(data[0].borders);
-   })
+//    fetch("https://restcountries.eu/rest/v2/name/germany", { 
+//     //  method: "GET",
+//     //  headers: headersList
+//    }).then(function(response) {
+//      return response.json(); // default olark text() idi. arrray döndürmek için json formatına aldık.
+//    }).then(function(data) {
+//      console.log(data[0]);
+//    })
 
 
    const renderCountry = (data, className = '') => {
@@ -160,39 +152,109 @@ let headersList = {
     countriesSection.style.opacity = 1;
   };
   
-//   fetch('https://restcountries.eu/rest/v2/name/turkey')
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       renderCountry(data[0]);
-//     });
-  //   .then(function (response) {
+  
+  // fetch('https://restcountries.eu/rest/v2/name/turkey')
+  //   .then((response) => {
   //     return response.json();
   //   })
-  //   .then(function (data) {
-  //     console.log(data[0]);
+  //   .then((data) => {
+  //     renderCountry(data[0]);
   //   });
-  
+   
+
+
+    /////////////////////// ÖMER //////////////////////////////
+    // const getCountryInfo = (countryname) =>{
+    //   fetch (`https://restcountries.eu/rest/v2/name/${countryname}`)
+    //   .then( response => {return response.json()})
+    //   .then( data => renderCountry(data[0]))
+    // }
+
+    // getCountryInfo("italy")
+    // getCountryInfo("usa")
+
+
+
   const getCountryData = (countryName) => {
     fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if (!response.ok) throw new Error('something went wrong!');
         return response.json();
       })
       .then((countryData) => {
-        console.log(countryData[0]);
+        // console.log(countryData[0]);
         renderCountry(countryData[0]);
       })
 
     .catch((error) => console.log(error)); 
   };
   
-  getCountryData('italy');
-  getCountryData('Usa');
-  getCountryData('turkey');
-  getCountryData('spain');
-  
-  
+  // getCountryData('italy');
+  // getCountryData('Usa');
+  // getCountryData('turkey');
+  // getCountryData('spain');
 
+  const getCountryCode = (countryCode) => {
+    fetch (`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+    .then(response => {
+     return response.json();
+    })
+    .then((data) =>{
+      console.log(data) //burada array tanımlanmış.
+      renderCountry(data)
+    }
+     )
+  }
+  
+  // getCountryCode("tur")
+
+  const getCountryNeighbours = (countryName)=>{
+    fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+    .then(response => { return response.json()})
+
+    .then(countryData =>{ renderCountry(countryData[0]);
+      // console.log(countryData[0].borders)
+      return countryData[0].borders;
+    })
+
+    .then(neighbours => {
+      console.log(...neighbours) // ... ile arraydan çıkıp text halini yazıyor.
+
+      neighbours.forEach(country => {
+      getCountryCode(country);
+      
+    })})
+    .catch(error => console.log(error))
+    
+  }
+  
+getCountryNeighbours("spain")
+
+
+// const getCountryNeighboursAsync = async (countryName)=>{
+
+//   try {
+    
+//     let response =  await fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+
+//     let data = await response.json()
+  
+//     renderCountry(data[0]);
+
+//     const neighbours = data[0].borders[5];
+
+//     response = await fetch(`https://restcountries.eu/rest/v2/alpha/${neighbours}
+//     `)
+    
+//     data = await response.json();
+//     renderCountry(data, "neighbours")
+
+//   } catch (error) {
+//     console.log(error)
+    
+//   }
+  
+// }
+
+// getCountryNeighboursAsync("turkey")
