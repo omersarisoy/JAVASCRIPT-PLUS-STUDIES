@@ -1,7 +1,7 @@
 // postman : api test aracı. 
 
-// cdn : link vererek ilgili küyüphanelerdeki fonksiyonları kullanmaya yarar.
-// axios cdn ile kullanmanın dezavantajı internet bağlantısı gittiğinde uygulama çalışmaz.
+// cdn : link vererek ilgili kütüphanelerdeki fonksiyonları kullanmaya yarar.
+// axios'u cdn ile kullanmanın dezavantajı, internet bağlantısı gittiğinde uygulama çalışmaz.
 
 // base url : e.g. https://reqres.in/
 // endpoint : Requestin altında  /api/users?page=2
@@ -23,31 +23,32 @@ const fillFormInput = () => {
 
 // içeriğini anlamamış olmak normal. mantığını anlamak önemli. eski kurumsal şirketlerde görülebilir.
 
-/* 
-const apiRegister = () => {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
 
-    const bodyData = {
-        email : email,
-        password : password
-    } //api ye yollayacağımız object dosyasını oluşturduk, içinde kullanıcının şifresi ve emaili var
+// const apiRegister = () => {
+//     let email = document.getElementById("email").value;
+//     let password = document.getElementById("password").value;
 
-    var xhr = new XMLHttpRequest();  //yeni bir istek oluşturduk
-    xhr.open("POST", "https://reqres.in/api/register"); //istek içine url yi ve post şekilde gideceği bilgisini yerleştirdik
-    xhr.setRequestHeader("Content-Type", "application/json");//içerik tipini tanımladık.
-    xhr.send(JSON.stringify(bodyData)); //bodyData mızı API nin istediği şekle getirdik
-    xhr.onload = function(){
-        console.log(xhr.responseText);
-        let data = JSON.parse(xhr.responseText);
-        if(data.id != "0"){
-            console.log(data);
-            localStorage.setItem("token",data.token); //ilk kayıt sonrası verilen token ı local e kaydettik. Token: üye olunduğunda apinin üyeye verdiği jeton, her girişte bu jeton kullanılır
-        }
-    }
-}
+//     const bodyData = {
+//         email : email,
+//         password : password
+//     } //api ye yollayacağımız object dosyasını oluşturduk, içinde kullanıcının şifresi ve emaili var
 
- */
+//     var xhr = new XMLHttpRequest();  //yeni bir istek oluşturduk
+//     xhr.open("POST", "https://reqres.in/api/register"); //istek içine url yi ve post şekilde gideceği bilgisini yerleştirdik
+//     xhr.setRequestHeader("Content-Type", "application/json");//içerik tipini tanımladık.
+//     xhr.send(JSON.stringify(bodyData)); //bodyData mızı API nin istediği şekle getirdik
+//     console.log(xhr)
+//     xhr.onload = function(){
+//         console.log(xhr.responseText);
+//         let data = JSON.parse(xhr.responseText);
+//         if(data.id != "0"){
+//             console.log(data);
+//             localStorage.setItem("token",data.token); //ilk kayıt sonrası verilen token ı local e kaydettik. Token: üye olunduğunda apinin üyeye verdiği jeton, her girişte bu jeton kullanılır
+//         }
+//     }
+// }
+
+
 
 //////////////////// FETCH //////////////////////
 
@@ -70,7 +71,7 @@ const apiRegister = () => {
 //         body: JSON.stringify(bodyData)
 //     })
 //     .then(response => response.json())  //gelen response u json a çevirdik
-//     .then(data => {//data = api den dönen değer
+//     .then(data => {  //data = api den dönen değer
 //         if(data.id != "0"){ //data mızın id sini kontrol ediyoruz
 //             console.log(data)
 //             alert("Welcome "+ email.split("@")[0])

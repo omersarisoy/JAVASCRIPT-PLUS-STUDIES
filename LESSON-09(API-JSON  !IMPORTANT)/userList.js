@@ -15,7 +15,7 @@ $(document).ready(function(){
 //     })
 //     .then(response => response.json())
 //     .then(ömer => {
-//       // console.log(ömer)
+//       console.log(ömer)
 //         if(ömer.data[0].id != "0"){
 //           for(let i=0; i< ömer.data.length; i++){
 //             $("#tbodyUserList").append(`
@@ -103,7 +103,7 @@ const getUserList = async() => {
     console.log(ömer.data)
     console.log(ömer.data.data)
     
-  if(ömer.data.data.id != 0){
+  if(ömer.data.data.id != 0){   // ömer yerine data yazsaydık, data.data.data olacaktı :)
     ömer.data.data.forEach((item) => {
       $("#tbodyUserList").append(`
       

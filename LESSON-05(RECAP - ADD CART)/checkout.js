@@ -1,4 +1,5 @@
 // Product Constructor
+
 function Product(name,price,quantity){  
     // console.log(this)
     this.name = name;
@@ -6,7 +7,7 @@ function Product(name,price,quantity){
     this.quantity = quantity;
 }
 
-// console.log(this)
+console.log(this)
 
 function Display () {
     // console.log(this)
@@ -21,7 +22,13 @@ function Display () {
 const formSubmit = document.getElementById("customer-form").addEventListener("submit", function(e){
 
     // console.log(e)
+    // console.log(e.target)
+    // console.log(e.target[0])
+    // console.log(e.target[0].value)
     // console.log(this)
+
+    // console.log(this) = console.log(e.target)
+    
 
     e.preventDefault()
 

@@ -77,9 +77,10 @@
 // }
 // countSeconds2(3);
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
 // new Promise(function(resolve, reject){
-//     const isSuccessfull = false;
+//     const isSuccessfull = true;
 
 //     if(isSuccessfull){
 //         resolve("task completed successfully");
@@ -87,7 +88,7 @@
 //     reject("failed");
 // })
 
-// .then((sonuc) => {
+// .then((sonuc) => {                 // .then.then.then ... =>>> promise chain
 //     console.log(sonuc);
 //     return "devam ediyor"
 // })
@@ -99,6 +100,7 @@
 //     return "Game is over!"
 //   }).then(console.log)
 
+  ////////////////////////////////////////////////////////////////////////////////////////////
 
 // AJAX = Asynchronous Javascript and XML
 
@@ -106,8 +108,7 @@
 // Frontend ile backend arasındaki veri akışını sağlar.
 
 
-
-// Application Programing Interface (API)
+// API = Application Programing Interface 
 
 // let headersList = {
 //     "Accept": "*/*",
@@ -118,11 +119,14 @@
 //     //  method: "GET",
 //     //  headers: headersList
 //    }).then(function(response) {
+//      console.log(response)
 //      return response.json(); // default olark text() idi. arrray döndürmek için json formatına aldık.
-//    }).then(function(data) {
-//      console.log(data[0]);
+//     }).then(function(data) {
+//       console.log(data)
+//       console.log(data[0]);
 //    })
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 
    const renderCountry = (data, className = '') => {
     const countriesSection = document.querySelector('.countries');
@@ -157,13 +161,14 @@
   //   .then((response) => {
   //     return response.json();
   //   })
-  //   .then((data) => {
-  //     renderCountry(data[0]);
+  //   .then((ömer) => {
+  //     console.log(ömer)
+  //     renderCountry(ömer[0]);
   //   });
    
 
 
-    /////////////////////// ÖMER //////////////////////////////
+    ///////////////////// ÖMER //////////////////////////////
     // const getCountryInfo = (countryname) =>{
     //   fetch (`https://restcountries.eu/rest/v2/name/${countryname}`)
     //   .then( response => {return response.json()})
@@ -173,27 +178,29 @@
     // getCountryInfo("italy")
     // getCountryInfo("usa")
 
+///////////////////////////////////////////////////////////////////////////
 
+  // const getCountryData = (countryName) => {
+  //   fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+  //     .then((response) => {
+  //       // console.log(response);
+  //       if (!response.ok) throw new Error('something went wrong!');
+  //       return response.json();
+  //     })
+  //     .then(countryData => {
+  //       // console.log(countryData[0]);
+  //       renderCountry(countryData[0]);
+  //     })
 
-  const getCountryData = (countryName) => {
-    fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
-      .then((response) => {
-        // console.log(response);
-        if (!response.ok) throw new Error('something went wrong!');
-        return response.json();
-      })
-      .then((countryData) => {
-        // console.log(countryData[0]);
-        renderCountry(countryData[0]);
-      })
-
-    .catch((error) => console.log(error)); 
-  };
+  //   .catch((error) => console.log(error)); 
+  // };
   
   // getCountryData('italy');
   // getCountryData('Usa');
   // getCountryData('turkey');
   // getCountryData('spain');
+
+  ////////////////////////////////////////////////////////////////////////////////
 
   const getCountryCode = (countryCode) => {
     fetch (`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
@@ -201,7 +208,7 @@
      return response.json();
     })
     .then((data) =>{
-      console.log(data) //burada array tanımlanmış.
+      console.log(data) //burada array tanımlanmış. O yüzden tekrar içine girmiyoruz.
       renderCountry(data)
     }
      )
@@ -209,12 +216,14 @@
   
   // getCountryCode("tur")
 
+  
+
   const getCountryNeighbours = (countryName)=>{
     fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
     .then(response => { return response.json()})
 
     .then(countryData =>{ renderCountry(countryData[0]);
-      // console.log(countryData[0].borders)
+      console.log(countryData[0].borders)
       return countryData[0].borders;
     })
 
@@ -230,6 +239,8 @@
   }
   
 getCountryNeighbours("spain")
+
+///////////////////////////////////////////////////////////////////////////////////
 
 
 // const getCountryNeighboursAsync = async (countryName)=>{
